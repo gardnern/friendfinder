@@ -53,14 +53,14 @@ var friends = [
 
 // html routes 2routes
 
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
 app.get("./survey", function(req, res) {
   res.sendFile(path.join(_direname, "survey.html"));
 
   console.log(survey);
-});
-
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/add", function(req, res) {
@@ -69,18 +69,18 @@ app.get("/add", function(req, res) {
 
 // Displays all possible friends
 app.get("/api/friends", function(req, res) {
-  return res.json(characters);
+  return res.json(friend);
 });
 
 // Displays a single character, or returns false
 app.get("/api/friends/:name", function(req, res) {
-  var chosen = req.params.character;
+  var chosen = req.params.friend;
 
   console.log(chosen);
 
   for (var i = 0; i < friends.length; i++) {
     if (chosen === friends[i].name) {
-      return res.json(characters[i]);
+      return res.json(friend[i]);
     }
   }
 
@@ -99,7 +99,7 @@ app.post("/api/friends", function(req, res) {
 
   console.log(newFriend);
 
-  characters.push(newFriend);
+  friend.push(newFriend);
 
   res.json(newFriend);
 });

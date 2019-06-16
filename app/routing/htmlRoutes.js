@@ -48,37 +48,32 @@ var
 		return new jQuery.fn.init( selector, context );
 	},
 
-	// Support: Android<4.1, IE<9
-	// Make sure we trim BOM and NBSP
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
-	// Matches dashed string for camelizing
+
 	rmsPrefix = /^-ms-/,
 	rdashAlpha = /-([\da-z])/gi,
 
-	// Used by jQuery.camelCase as callback to replace()
+
 	fcamelCase = function( all, letter ) {
 		return letter.toUpperCase();
 	};
 
 jQuery.fn = jQuery.prototype = {
-	// The current version of jQuery being used
+
 	jquery: version,
 
 	constructor: jQuery,
 
-	// Start with an empty selector
+	
 	selector: "",
 
-	// The default length of a jQuery object is 0
 	length: 0,
 
 	toArray: function() {
 		return slice.call( this );
 	},
 
-	// Get the Nth element in the matched element set OR
-	// Get the whole matched element set as a clean array
 	get: function( num ) {
 		return num != null ?
 
@@ -273,20 +268,16 @@ jQuery.extend({
 				return false;
 			}
 		} catch ( e ) {
-			// IE8,9 Will throw exceptions on certain host objects #9897
+			
 			return false;
 		}
 
-		// Support: IE<9
-		// Handle iteration over inherited properties before own properties.
 		if ( support.ownLast ) {
 			for ( key in obj ) {
 				return hasOwn.call( obj, key );
 			}
 		}
 
-		// Own properties are enumerated firstly, so to speed up,
-		// if last one is own, then all properties are own.
 		for ( key in obj ) {}
 
 		return key === undefined || hasOwn.call( obj, key );
