@@ -4,6 +4,6 @@ A compatibility- based Friend finder application. A full- stack site that will t
 
 Express will be used to handle routing and will be deployed using Heroku.
 
-Friend finder folder image:
+
 
 
