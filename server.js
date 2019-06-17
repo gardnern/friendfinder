@@ -12,39 +12,6 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Friends (DATA)
-// =============================================================
-var friends = [
-  {
-    name: "Yoda",
-    photo: "Jedi Master",
-    scores: [
-
-
-
-    ]
-  },
-  {
-    name: "Darth Maul",
-    photo: "Sith Lord",
-    scores: [
-
-
-
-    ]
-  },
-  {
-    name: "Obi Wan Kenobi",
-    photo: "Jedi Master",
-    scores: [
-
-
-
-
-
-    ]
-  }
-];
 
 // Routes
 // =============================================================
